@@ -1,7 +1,7 @@
 pipelines:
-  - name: aws-s3-cp
+  - name: aws_s3_cp
     steps:
-      - name: aws-s3-cp
+      - name: aws_s3_cp
         type: Bash
         configuration:
           integrations:
