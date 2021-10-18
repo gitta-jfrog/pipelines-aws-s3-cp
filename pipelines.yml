@@ -1,0 +1,13 @@
+pipelines:
+  - name: aws-s3-cp
+    steps:
+      - name: aws-s3-cp
+        type: Bash
+        configuration:
+          integrations:
+            - name: awsint
+        execution:
+          onStart:
+            - echo "hello world" >> uploadme.txt 
+            - aws s3 cp uploadme.txt s3://yardeng-bucket-europe/artifactory/uploadme.txt
+            - aws s3 ls s3://yardeng-bucket-europe/artifactory/
